@@ -1,0 +1,27 @@
+html{
+    background: linear-gradient(#76F7Bf, #499167);
+}
+.loginTitle{
+    color: black;
+    text-align: center;
+    text-decoration: underline;
+}
+form{
+    margin: 0 auto;
+    width: 250px;
+}
+.logo{
+    
+    height: 132px;
+    width: 132px;
+}
+#image{
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 100%;
+}
+.teamName{
+    text-align: center;
+}
