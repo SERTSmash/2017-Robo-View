@@ -1,7 +1,7 @@
 {
   "name": "robo-view",
   "version": "0.0.1",
-  "description": "An easy way to create",
+  "description": "An easy way to browse FRC robots and view specifications.",
   "main": "server.js",
   "repository": "",
   "author": "Jackson Lewis <st.japa6@gmail.com>, Alex Anderson <alexandersonone@gmail.com>, Destin Dahlgren <destin.dahlgren@comcast.net>",

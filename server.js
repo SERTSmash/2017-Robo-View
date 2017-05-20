@@ -21,6 +21,7 @@ http.createServer(function(req, res){
 else if(req.url.substring(0, 7) == "/search" && req.method.toUpperCase() == "GET"){
     console.log(url.parse(req.url, true).query);
     backend.getRobot(url.parse(req.url, true).query.id,function(data){
+      console.log(JSON.stringify(data));
       res.end(JSON.stringify(data));
     });
   }

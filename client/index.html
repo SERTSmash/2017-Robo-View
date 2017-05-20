@@ -6,15 +6,32 @@
     <meta name="description" content="A FIRST Robotics scouting application.">
     <meta name="keywords" content="FIRST, robotics, scouting">
      <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet"> 
+     <script type="text/javascript" src="main.js"></script>
   </head>
   <body>
-    
-    <div class="loginTitle">
-      <h1>Find Robotic Teams</h1>
+    <div class="verthalf redbg">
+      <h1>Robo-View</h1>
     </div>
-    <form class="login" action="/search" method="get">
-      <input type="text" name="id" placeholder="Team Number"/>
-      <button type="submit">Search</button>
-    </form>
-  </body>
+    <div class="verthalf formCont">
+      
+      <div class="bLeft">
+        <br>
+        <br>
+        <br>
+        <br>
+        <input type="text" id="inputbox" placeholder="Team Number"/>
+        <br>
+        <button id="searchbutton">Search</button>
+      </div>
+      <div class="bRight">
+        Whatever
+      </div>
+      
+      
+    </div>
+    
+      
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="query.js"></script>
 </html>

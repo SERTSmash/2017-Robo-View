@@ -1,6 +1,11 @@
-html{
-    background: #ff785a;
+html, body{
+    padding: 0.1px;
+    margin: 0.1px;
     height: 100vh;
+}
+.FindTeams{
+    width: 50%;
+    border: 5px black solid;
 }
 .teamName{
     text-align: center;
@@ -27,10 +32,72 @@ form{
     border-radius: 100%;
 }
 .robotInfo{
-    padding-top: 1px;
+    padding-top: 0.1px;
 }
 
 h1 {
-    font-size: 10vh;
+    font-size: 7vw;
+    font-family: 'Amaranth', sans-serif;
+}
+.verthalf {
+    margin: 0.1px;
+    padding: 0.1px;
+    height :50vh;
+    text-align: center;
+}
+
+.bLeft {
+
+    width: 50vw;
+    height: 50vh;
+    background-color: #d8bfaa;
+}
+
+.bRight {
+    flex-grow: 1;
+    float: left;
+    background-color: #e0e0e0;
+}
+
+.redbg{
+    height: 50vh;
+    background: #ff785a;
+}
+
+.formCont {
+    display: flex;
+}
+
+div{
+    padding: 0.1px;
+    margin: 0.1px;
+}
+
+input, button {
+    border-width: 0px;
+}
+
+input, button {
+    height: 5vh;
+}
+
+.bRight button, .bRight input {
+    background-color: #e0e0e0;
+}
+
+.bLeft button, .bLeft input {
+    background-color: #d8bfaa;
+    font-size: 3vh;
+    text-align: center;
+}
+
+.bLeft input {
+    font-size: 6vh;
+    height: 11vh;
+    width: 30vw;
+}
+
+h2 {
+    font-size: 6vh;
     font-family: 'Amaranth', sans-serif;
 }

@@ -1,6 +1,5 @@
 Ideas:
-
-- Robots can be added with a name, team number, drive train, mechanisms, manipulators, other parts.
-- Objects:
--   Robot
--   Note
+-------
+Pages should be:
+- index.html -- Search page
+- login.html -- Login page
