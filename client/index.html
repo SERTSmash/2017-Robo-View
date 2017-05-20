@@ -5,16 +5,16 @@
     <link type="text/css" rel="stylesheet" href="stylesheet.css">
     <meta name="description" content="A FIRST Robotics scouting application.">
     <meta name="keywords" content="FIRST, robotics, scouting">
+     <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet"> 
   </head>
   <body>
     
     <div class="loginTitle">
-      <h1>Login</h1>
+      <h1>Find Robotic Teams</h1>
     </div>
-    <form class="login" action="/createpage" method="post">
-      <input type="text" name="team" placeholder="Team Name"/>
-      <input type="text" name="password" placeholder="Password"/>
-      <button type="submit">Submit</button>
+    <form class="login" action="/search" method="get">
+      <input type="text" name="id" placeholder="Team Number"/>
+      <button type="submit">Search</button>
     </form>
   </body>
 </html>

@@ -1,10 +1,14 @@
 html{
-    background: linear-gradient(#76F7Bf, #499167);
+    background: #ff785a;
+    height: 100vh;
+}
+.teamName{
+    text-align: center;
+    text-decoration: bold;
 }
 .loginTitle{
     color: black;
     text-align: center;
-    text-decoration: underline;
 }
 form{
     margin: 0 auto;
@@ -22,6 +26,11 @@ form{
     margin: 0 auto;
     border-radius: 100%;
 }
-.teamName{
-    text-align: center;
+.robotInfo{
+    padding-top: 1px;
+}
+
+h1 {
+    font-size: 10vh;
+    font-family: 'Amaranth', sans-serif;
 }

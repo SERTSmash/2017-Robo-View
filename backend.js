@@ -54,4 +54,3 @@ module.exports.addNote = function(name,teamid,note)
     //connects to json database, adds note
     //returns nothing
 };
-module.exports.getRobot(2521,function(data){console.log(data);});
