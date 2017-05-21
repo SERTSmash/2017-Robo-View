@@ -136,7 +136,7 @@ module.exports.changePassword = function(teamid,password,callback)
     });
 }
 
-module.exports.update = function(teamid,thing,value,isauthenicated)
+module.exports.update = function(teamid,value,isauthenticated)
 {
     if(!isauthenticated) return;
     jsonf.readFile("json/robots.json", function(err, obj) {
@@ -144,24 +144,12 @@ module.exports.update = function(teamid,thing,value,isauthenicated)
         {
             if(obj.robots.hasOwnProperty(teamid))
             {
-            if(thing === "name")
-            {
-                obj.robots[teamid] = {
-                    "name" : name,
-                    "picturelink": obj.robots[teamid].picturelink,
-                    "desc" : obj.robots[teamid].desc,
-                    "password" : obj.robots[teamid].password
-                }
-            }
-            if(thing === "picturelink")
-            {
                 obj.robots[teamid] = {
                     "name" : obj.robots[teamid].name,
-                    "picturelink": value,
-                    "desc" : obj.robots[teamid].desc,
+                    "picturelink": obj.robots[teamid].picturelink,
+                    "desc" : value,
                     "password" : obj.robots[teamid].password
-                }
-            }
+                };
             /*
             if(thing === "name")
             {

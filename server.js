@@ -57,7 +57,7 @@ http.createServer(function(req, res){
   else if(req.url.substring(0,7) === "/update" && req.method.toUpperCase() === "GET")
   {
     var post = url.parse(req.url,true).query;
-    backend.update(post.id,post.thing,post.value,post.authenticated);
+    backend.update(post.id,post.value,post.authenticated);
   }
   // Searching
 else if(req.url.substring(0, 7) == "/search" && req.method.toUpperCase() == "GET"){

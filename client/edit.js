@@ -10,10 +10,12 @@ console.log(user);
 function updateDesc()
 {
     /*
+    console.log(window.localStorage.getItem("login"));
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET","/update?id="+window.localStorage.getItem("login")+"&",true);
+    var value = document.getElementById("desc").textContent;
+    xhttp.open("GET","/update?id="+window.localStorage.getItem("user")+"&value="+value+"&authenticated=1",true);
         xhttp.send();
-        */
+    */
 }
 /*
 $("#nameupdate").click(

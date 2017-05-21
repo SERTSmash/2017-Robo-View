@@ -49,12 +49,12 @@ h1 {
 .bLeft {
 
     width: 50vw;
-    height: 120vh;
+    height: 133vh;
     background-color: #2d3142;
 }
 
 .bRight {
-    height: 120vh;
+    height: 133vh;
     flex-grow: 1;
     float: left;
     background-color: #4f5d75;
