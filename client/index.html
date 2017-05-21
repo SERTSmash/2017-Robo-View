@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en">
   <head>
     <title>Robo View</title>
     <link type="text/css" rel="stylesheet" href="stylesheet.css">
@@ -7,14 +7,22 @@
     <meta name="keywords" content="FIRST, robotics, scouting">
      <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet"> 
      <script type="text/javascript" src="main.js"></script>
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
   <body>
     <div class="verthalf redbg">
       <h1>Robo-View</h1>
+      <p id="desc"></p>
     </div>
     <div class="verthalf formCont">
-      
       <div class="bLeft">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <br>
         <br>
         <br>
@@ -24,13 +32,46 @@
         <button id="searchbutton">Search</button>
       </div>
       <div class="bRight">
-        Whatever
+        <br>
+        <p class="small">Login</p>
+          <input type="text" id="name" placeholder="Team Number">
+          <br>
+          <br>
+          <input type="password" id="pass" placeholder="Password">
+          <br>
+          <br>
+          <button id="loginbutton">Login</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p class="small">Sign up</p>
+        <form action="/createteam" method="post">
+          <input type="text" name="name" placeholder="Robot Name"/>
+          <br>
+          <br>
+          <input type="text" name="team" placeholder="Team Number"/>
+          <br>
+          <br>
+          <input type="text" name="picture" placeholder="Link to picture"/>
+          <br>
+          <br>
+          <br>
+          <textarea name="desc" placeholder="Description"
+            rows="5" cols="40"></textarea>
+          <br>
+          <br>
+          <input type="password" name="password" placeholder="Password"/>
+          <br>
+          <br>
+          <button type="submit">Submit</button>
+        </form>
+        <br>
+        <br>
+        
+        
       </div>
-      
-      
-    </div>
-    
-      
+      <br>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="query.js"></script>

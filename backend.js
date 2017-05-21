@@ -7,17 +7,20 @@ var searchObj = {};
 
 var userObj = {};
 
-module.exports.setRobot = function(name,teamid,specs,callback)
+module.exports.setRobot = function(name,teamid,picturelink,description,password,callback)
 {
     //get connection to json database
     //should return a Note (with either success or failure)
     jsonf.readFile("json/robots.json", function(err, obj) {
         if(obj != undefined)
         {
+            if(obj.hasOwnProperty(teamid)) return;
             searchObj = obj;
             searchObj.robots[teamid] = {
                 "name" : name,
-                "specs" : specs
+                "picturelink":picturelink,
+                "desc" : description,
+                "password" : password
             };
             jsonf.writeFile("json/robots.json", searchObj,function(err){
                 if(err) throw err; 
@@ -29,6 +32,32 @@ module.exports.setRobot = function(name,teamid,specs,callback)
         }
     });
 };
+
+module.exports.checkUser = function(teamid,password,callback)
+{
+    jsonf.readFile("json/robots.json",function(err,obj)
+    {
+       if(obj != undefined)
+       {
+           if(obj.robots.hasOwnProperty(teamid))
+           {
+               if(obj.robots[teamid].password === password)
+               {
+                   console.log(obj.robots[teamid].password,password);
+                   callback(true);
+               }
+               else callback(false);
+           }
+           else {
+               console.log(teamid);
+               callback(false);
+           }
+       }
+       else {
+           throw err;
+       }
+    });
+}
 
 module.exports.getRobot = function(teamid,callback)
 {
@@ -42,7 +71,7 @@ module.exports.getRobot = function(teamid,callback)
            }
            else {
                console.log("Robot does not exist");
-               callback({type:"Error",msg:"The robot requested does not exist."});
+               callback({type:"Error",msg:"This robot does not exist yet. Log "});
            }
        }
        else {
@@ -51,7 +80,7 @@ module.exports.getRobot = function(teamid,callback)
     });
 }
 
-module.exports.addNote = function(name,teamid,note)
+module.exports.addRecording = function(name,teamid,note)
 {
     //connects to json database, adds note
     //returns nothing
@@ -71,7 +100,30 @@ module.exports.addUser = function(teamid,password,callback)
                 jsonf.writeFile("json/users.json", userObj,function(err){
                 if(err) throw err; 
             });
-            callback({ type:"Notification", msg:"You are sucessfully logged in. You will be redirected to the home page."});
+            callback({ type:"Notification", msg:"Thank you for registering your team."});
+            }
+        }
+        else {
+            throw err;
+        }
+    });
+}
+
+module.exports.changePassword = function(teamid,password,callback)
+{
+    jsonf.readFile("json/users.json", function(err, obj) {
+        if(obj != undefined)
+        {
+            userObj = obj;
+            if(userObj.hasOwnProperty(teamid))
+            {
+                userObj[teamid] = {
+                    "pass": password
+                }
+                jsonf.writeFile("json/users.json", userObj,function(err){
+                if(err) throw err; 
+            });
+            callback({ type:"Notification", msg:"Your password has been updated"});
             }
         }
         else {

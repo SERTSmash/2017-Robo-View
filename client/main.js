@@ -1,15 +1,15 @@
 var desc;
 
 window.onload = function(){
-    
+    desc = document.getElementById("desc");
+    go();
 }
 
 
 // Loop through the different descriptions
 function getDescAtCounter() {
   var counterclone = counter;
-  var toandfrom = ["Compare robots", "Record data", "Vote on other robots", 
-  "Explore teams"];
+  var toandfrom = ["Compare robots", "Record data",  "Explore teams"];
   var whereBool;
   var lpos = 0;
 
@@ -29,16 +29,13 @@ function getDescAtCounter() {
 
   if(counterclone >= 0) {
     counter = 0;
-    console.log("done");
     return "";
   }
 
-  console.log(counterclone);
   if(whereBool) {
     return "";
   }
   else {
-    console.log(counterclone);
     if(toandfrom[lpos].length * 2 < -counterclone) {
       return toandfrom[lpos].substring(0, toandfrom[lpos].length * 3 + counterclone);
     }
@@ -52,3 +49,11 @@ function getDescAtCounter() {
 }
 
 var counter = 0;
+
+function go(){
+  setTimeout(function(){
+    desc.innerHTML = getDescAtCounter() + ".";
+    counter++;
+    go();
+  }, 50);
+}

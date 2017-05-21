@@ -2,6 +2,7 @@ html, body{
     padding: 0.1px;
     margin: 0.1px;
     height: 100vh;
+    font-family: 'Open Sans', sans-serif;
 }
 .FindTeams{
     width: 50%;
@@ -20,7 +21,6 @@ form{
     width: 250px;
 }
 .logo{
-    
     height: 132px;
     width: 132px;
 }
@@ -42,25 +42,26 @@ h1 {
 .verthalf {
     margin: 0.1px;
     padding: 0.1px;
-    height :50vh;
+    height :100vh;
     text-align: center;
 }
 
 .bLeft {
 
     width: 50vw;
-    height: 50vh;
-    background-color: #d8bfaa;
+    height: 120vh;
+    background-color: #2d3142;
 }
 
 .bRight {
+    height: 120vh;
     flex-grow: 1;
     float: left;
-    background-color: #e0e0e0;
+    background-color: #4f5d75;
 }
 
 .redbg{
-    height: 50vh;
+    height: 100vh;
     background: #ff785a;
 }
 
@@ -82,13 +83,22 @@ input, button {
 }
 
 .bRight button, .bRight input {
-    background-color: #e0e0e0;
+    background-color: #4f5d75;
+    color: #ffffff;
+    font-size: 5vh;
+    text-align: center;
+    width: 20vw;
 }
 
 .bLeft button, .bLeft input {
-    background-color: #d8bfaa;
+    background-color: #2d3142;
     font-size: 3vh;
     text-align: center;
+    color: white;
+}
+
+.bRight button {
+    font-size: 2vh;
 }
 
 .bLeft input {
@@ -100,4 +110,17 @@ input, button {
 h2 {
     font-size: 6vh;
     font-family: 'Amaranth', sans-serif;
+}
+
+#desc {
+    font-size: 4vh;
+}
+
+small {
+    color: #ffffff;
+}
+
+.small {
+    font-size: 2vh;
+    color: white;
 }
