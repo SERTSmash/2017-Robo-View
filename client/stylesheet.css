@@ -101,10 +101,18 @@ input, button {
     font-size: 2vh;
 }
 
+.bRight button:hover {
+    background-color: #3d4a62;   
+}
+
 .bLeft input {
     font-size: 6vh;
     height: 11vh;
     width: 30vw;
+}
+
+.bLeft button:hover {
+    background-color: #3d4152;
 }
 
 h2 {

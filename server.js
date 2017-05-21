@@ -27,11 +27,20 @@ http.createServer(function(req, res){
       req.on('end', function () {
         var post = qs.parse(body);
         console.log("Submitted");
-        backend.setRobot(post.name, post.team,post.picture,post.desc,post.password,true,function(data)
+        backend.setRobot(escChars(post.name), escChars(post.team),escChars(post.picture),escChars(post.desc),post.password,function(data)
         {
+          if(data)
+          {
+            fs.readFile("client/index.html", function(err, data){
+            if(err) throw err;
+            res.end(data);
+            });
+          }
+          else{
           res.end("<html><head><meta http-equiv=\"refresh\" content=\"0; URL='/bot/" +
           post.team +"/' \"/>" +
             "</head></html>");
+          }
         });
       });
   }
@@ -45,7 +54,11 @@ http.createServer(function(req, res){
       res.end("Invalid Credentials.")
     });
   }
-  
+  else if(req.url.substring(0,7) === "/update" && req.method.toUpperCase() === "GET")
+  {
+    var post = url.parse(req.url,true).query;
+    backend.update(post.id,post.thing,post.value,post.authenticated);
+  }
   // Searching
 else if(req.url.substring(0, 7) == "/search" && req.method.toUpperCase() == "GET"){
     console.log(url.parse(req.url, true).query);
@@ -90,3 +103,26 @@ else if(req.url.substring(0, 7) == "/search" && req.method.toUpperCase() == "GET
      });
    }
 }).listen(8080);
+
+function escChars(str){
+  var newStr = "";
+  for(x in str){
+    var char = str[x];
+    if(char == "<"){
+      newStr += "&lt;";
+    }
+    else if(char == ">"){
+      newStr += "&gt;";
+    }
+    else if(char == "\""){
+      newStr += "\\\"";
+    }
+    else if(char == "\'"){
+      newStr += "\\\'";
+    }
+    else {
+      newStr += char;
+    }
+  }
+  return newStr;
+}

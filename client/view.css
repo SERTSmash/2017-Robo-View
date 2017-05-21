@@ -1,0 +1,10 @@
+#picturep {
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+}
+
+div{
+    padding-top: 10vh;
+    text-align: center;
+}

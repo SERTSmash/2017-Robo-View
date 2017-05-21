@@ -14,7 +14,11 @@ module.exports.setRobot = function(name,teamid,picturelink,description,password,
     jsonf.readFile("json/robots.json", function(err, obj) {
         if(obj != undefined)
         {
-            if(obj.hasOwnProperty(teamid)) return;
+            if(obj.robots.hasOwnProperty(teamid)){
+                console.log("Someone tried to overwrite a current team.");
+                callback(true);
+                return;
+            }
             searchObj = obj;
             searchObj.robots[teamid] = {
                 "name" : name,
@@ -25,7 +29,7 @@ module.exports.setRobot = function(name,teamid,picturelink,description,password,
             jsonf.writeFile("json/robots.json", searchObj,function(err){
                 if(err) throw err; 
             });
-                callback({ type:"Notification", msg:"Your changes were updated sucessfully. Refresh the page to see changes."});
+                callback(false);
         }
         else {
             throw err;
@@ -124,6 +128,60 @@ module.exports.changePassword = function(teamid,password,callback)
                 if(err) throw err; 
             });
             callback({ type:"Notification", msg:"Your password has been updated"});
+            }
+        }
+        else {
+            throw err;
+        }
+    });
+}
+
+module.exports.update = function(teamid,thing,value,isauthenicated)
+{
+    if(!isauthenticated) return;
+    jsonf.readFile("json/robots.json", function(err, obj) {
+        if(obj != undefined)
+        {
+            if(obj.robots.hasOwnProperty(teamid))
+            {
+            if(thing === "name")
+            {
+                obj.robots[teamid] = {
+                    "name" : name,
+                    "picturelink": obj.robots[teamid].picturelink,
+                    "desc" : obj.robots[teamid].desc,
+                    "password" : obj.robots[teamid].password
+                }
+            }
+            if(thing === "picturelink")
+            {
+                obj.robots[teamid] = {
+                    "name" : obj.robots[teamid].name,
+                    "picturelink": value,
+                    "desc" : obj.robots[teamid].desc,
+                    "password" : obj.robots[teamid].password
+                }
+            }
+            /*
+            if(thing === "name")
+            {
+                obj.robots[teamid] = {
+                    "name" : name,
+                    "picturelink": picturelink,
+                    "desc" : description,
+                    "password" : password
+                }
+            }
+            if(thing === "name")
+            {
+                obj.robots[teamid] = {
+                    "name" : name,
+                    "picturelink": picturelink,
+                    "desc" : description,
+                    "password" : password
+                }
+            }
+            */
             }
         }
         else {
