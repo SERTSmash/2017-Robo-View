@@ -9,7 +9,7 @@ window.onload = function(){
 // Loop through the different descriptions
 function getDescAtCounter() {
   var counterclone = counter;
-  var toandfrom = ["Compare robots", "Record data",  "Explore teams"];
+  var toandfrom = ["Compare robots", "Record data",  "Explore teams", "Show your robot to the world","Upload robot photos"];
   var whereBool;
   var lpos = 0;
 

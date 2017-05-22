@@ -83,8 +83,8 @@ else if(req.url.substring(0, 7) == "/search" && req.method.toUpperCase() == "GET
         else{
           botjs += data.data.name + "\",\"";
           botjs += parts[2] + "\",\"";
-          botjs += data.data.picturelink + "\",\"";
-          botjs += data.data.desc + "\"];";
+          botjs += data.data.picturelink + "\",`";
+          botjs += data.data.desc + "`];";
           console.log(botjs);
           res.end(botjs);
         }

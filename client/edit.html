@@ -5,7 +5,6 @@
     <meta name="description" content="A FIRST Robotics scouting application.">
     <meta name="keywords" content="FIRST, robotics, scouting">
      <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet"> 
-     <script type="text/javascript" src="main.js"></script>
      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
@@ -13,7 +12,14 @@
         <h1>User Area</h1>
         
         <h3>Edit Robot Details</h3>
-        <input placeholder="Description" id="desc"/><button onclick="updateDesc()">Update Description</button>
+        <textarea placeholder="Description" id="description" cols="40" rows="5"></textarea>
+        <br>
+        <button onclick="updateDesc()">Update Description</button>
+        <br>
+        <br>
+        <button>Log out</button>
+        <br>
+        <br>
         <br>
         <br>
         <button><a href="https://roboview-jacksoncoder.c9users.io/">Go to Home Page</a></button>

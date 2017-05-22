@@ -144,12 +144,16 @@ module.exports.update = function(teamid,value,isauthenticated)
         {
             if(obj.robots.hasOwnProperty(teamid))
             {
+                console.log(value);
                 obj.robots[teamid] = {
                     "name" : obj.robots[teamid].name,
                     "picturelink": obj.robots[teamid].picturelink,
                     "desc" : value,
                     "password" : obj.robots[teamid].password
                 };
+                jsonf.writeFile("json/robots.json", obj,function(err){
+                if(err) throw err; 
+            });
             /*
             if(thing === "name")
             {
