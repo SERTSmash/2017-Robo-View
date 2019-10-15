@@ -7,7 +7,7 @@
   "author": "Jackson Lewis <st.japa6@gmail.com>, Alex Anderson <alexandersonone@gmail.com>, Destin Dahlgren <destin.dahlgren@comcast.net>",
   "dependencies": {
     "async": "~0.2.8",
-    "express": "~3.2.4",
+    "express": "~4.17.1",
     "jsonfile": "^3.0.0",
     "socket.io": "~0.9.14"
   }
